@@ -1,0 +1,24 @@
+
+@model SecureShop.Models.Product
+@{
+    ViewData["Title"] = "Product Details";
+}
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-fluid rounded shadow-sm" src="@Model.ImageUrl" alt="@Model.Name" />
+    </div>
+    <div class="col-md-6">
+        <h2>@Model.Name</h2>
+        <p>@Model.Description</p>
+        <p class="h5">Price: ₹ @Model.Price</p>
+
+        @if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <a class="btn btn-primary" asp-controller="Orders" asp-action="Create" asp-route-productId="@Model.Id">Buy Now</a>
+        }
+        else
+        {
+            <a class="btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">Login to Purchase</a>
+        }
+    </div>
+</div>

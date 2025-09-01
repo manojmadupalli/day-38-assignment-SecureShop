@@ -1,0 +1,40 @@
+
+@model SecureShop.Controllers.AdminController.DashboardVm
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<h2 class="mb-3">Admin Dashboard</h2>
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Summary</h5>
+                <p class="mb-1">Products: <strong>@Model.ProductCount</strong></p>
+                <p>Orders: <strong>@Model.OrderCount</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="mt-4">Latest Orders</h4>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Order #</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Placed At (UTC)</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var o in Model.LatestOrders)
+    {
+        <tr>
+            <td>@o.Id</td>
+            <td>@o.Product?.Name</td>
+            <td>@o.Quantity</td>
+            <td>@o.PlacedAt</td>
+        </tr>
+    }
+    </tbody>
+</table>

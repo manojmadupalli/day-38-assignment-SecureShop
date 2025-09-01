@@ -1,0 +1,12 @@
+
+:root{
+  --brand: #4f46e5;
+}
+.hero{
+  background: linear-gradient(120deg, rgba(79,70,229,.08), rgba(16,185,129,.08));
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: 1rem;
+}
+.navbar-brand{ color: var(--brand) !important; }
+.btn-primary{ background-color: var(--brand); border-color: var(--brand); }
+.card{ border-radius: 1rem; }

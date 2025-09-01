@@ -1,0 +1,35 @@
+
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="text-center py-5 hero">
+    <h1 class="display-5 fw-bold">Secure by Design</h1>
+    <p class="lead">ASP.NET Core MVC + Identity + EF Core. SQL Injection-safe, XSS-safe, and role-based authorization.</p>
+    <a class="btn btn-lg btn-primary" asp-controller="Products" asp-action="Index">Browse Products</a>
+</section>
+<div class="row g-4 mt-2">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">XSS Protection</h5>
+                <p class="card-text">Razor automatically HTML-encodes user content. Inputs validated client & server-side.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">SQL Injection Defense</h5>
+                <p class="card-text">EF Core LINQ & parameterized queries. No string-concat SQL.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Role-Based Access</h5>
+                <p class="card-text">Admins get a dashboard. Customers can place orders. Unauthorized users are redirected.</p>
+            </div>
+        </div>
+    </div>
+</div>
